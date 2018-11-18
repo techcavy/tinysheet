@@ -1,0 +1,22 @@
+{
+  "name": "tinysheet",
+  "version": "0.0.1",
+  "description": "A small modular CSS generator for javascript",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesMR/tinysheet.git"
+  },
+  "author": "James Raymond",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamesMR/tinysheet/issues"
+  },
+  "homepage": "https://github.com/JamesMR/tinysheet#readme",
+  "devDependencies": {
+    "typescript": "^3.1.6"
+  }
+}
