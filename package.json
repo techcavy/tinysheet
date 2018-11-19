@@ -1,6 +1,6 @@
 {
   "name": "tinysheet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A small modular CSS generator for javascript",
   "main": "dist/index.js",
   "scripts": {
