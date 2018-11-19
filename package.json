@@ -4,6 +4,7 @@
   "description": "A small modular CSS generator for javascript",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc && uglifyjs dist/index.js -c -m -o dist/index.min.js",
     "test": "jest"
   },
   "repository": {
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/JamesMR/tinysheet#readme",
   "devDependencies": {
-    "typescript": "^3.1.6"
+    "jest": "^23.6.0",
+    "typescript": "^3.1.6",
+    "uglifyjs": "^2.4.11"
   }
 }

@@ -21,26 +21,26 @@ class Style {
     this.className = className;
   }
 
-  toString() {
+  get selector() {
     return '.' + this.className;
   }
 }
 
-function makeStyle(styleObject: CSSObject, className: string = null): Style {
-  let isRoot = false;
-  if (className === null) {
-    isRoot = true;
+function makeStyle(styleObject: CSSObject, className?: string): Style {
+  let isRoot = className === void 0;
+  if (isRoot) {
     className = genId();
   }
 
   let selector = className;
   let content = '{';
+  let cn;
   for (let key of Object.keys(styleObject)) {
     if (key[0] === '_' && key[1] !== '_') {
-      let cn = selector + hyphenate(key.replace('_', ':'));
+      cn = selector + hyphenate(key.replace('_', ':'));
       makeStyle(<CSSObject>styleObject[key], cn);
     } else if (key[0] === '.') {
-      let cn = `${selector} ${key}`;
+      cn = `${selector} ${key}`;
       makeStyle(<CSSObject>styleObject[key], cn);
     } else {
       let value = styleObject[key];
@@ -54,7 +54,6 @@ function makeStyle(styleObject: CSSObject, className: string = null): Style {
   }
   content += '}';
 
-  console.log(content);
   sheet.insertRule('.' + selector + content);
 
   if (isRoot) {
